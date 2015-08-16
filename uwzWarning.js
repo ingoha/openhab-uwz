@@ -15,15 +15,12 @@
 	for (var i = 0; i < lines.length; i += 1) {
 		var match = regex.exec(lines[i]);
 		if (match != null) {
-			console.log('Match at line ' + i);
-			console.log(match[1] + '-' + match[2]);
 			var type = warntyp[match[1]];
 			var level = warnstufen[match[2]];
 			if (type > type_max) type_max = type;
 			if (level > level_max) level_max = level;
 		}
 	}
-	console.log('Type ' + type_max + ', level ' + level_max);
 	// TBD: how to return warning level?
 	return type_max;
 }(input))
