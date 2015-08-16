@@ -2,6 +2,9 @@
 // see https://github.com/openhab/openhab/raw/master/bundles/core/org.openhab.core.transform/src/main/java/org/openhab/core/transform/internal/service/JavaScriptTransformationService.java
 // and https://docs.oracle.com/javase/7/docs/technotes/guides/scripting/programmer_guide/
 
+// openhab binding looks like this:
+// Number uwz      "Warnstufe [%.0f]" (Weather) { http="<[http://www.unwetterzentrale.de/uwz/getwarning_de.php?plz=69429&uwz=UWZ-DE&lang=de:80:JS(uwzWarning.js)]" }
+
 // logic from http://knx-user-forum.de/forum/%C3%B6ffentlicher-bereich/knx-eib-forum/code-schnipsel/16534-unwetterzentrale
 (function() {
 	var lines = input.toString().split('\n');
@@ -23,4 +26,5 @@
 	}
 	// TBD: how to return warning level?
 	result = type_max;
-}(input))
+	return result;
+}(input));
