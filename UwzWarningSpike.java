@@ -6,8 +6,10 @@ import org.w3c.dom.*;
 public class UwzWarningSpike {
 
 	public static void main(String[] args) throws Exception {
-		String input = "<html><head><title>Test</title></head><body><h1>Test</h1></body></html>";
-		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(input)));
+		//String input = "<html><head><title>Test</title></head><body><h1>Test</h1></body></html>";
+		//Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(input)));
+
+		Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new FileReader("testdata/plz-69429-yellow.html")));
 		
 		NodeList h1s = document.getElementsByTagName("h1");
         for (int i = 0; i < h1s.getLength(); i += 1) {

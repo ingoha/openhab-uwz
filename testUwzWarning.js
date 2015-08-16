@@ -7,7 +7,9 @@ var vm = require('vm');
 fs.readFile(__dirname + '/testdata/plz-69429-yellow.html', function(err, data) {
 	if (err) throw err;
 	input = data;
+	result = null;
 	var code = fs.readFileSync('uwzWarning.js' + '');
 	vm.runInThisContext(code, 'uwzWarning.js' + '');
+	console.log('result: ' + result);
 });
 

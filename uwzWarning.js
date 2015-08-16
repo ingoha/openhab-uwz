@@ -22,5 +22,5 @@
 		}
 	}
 	// TBD: how to return warning level?
-	return type_max;
+	result = type_max;
 }(input))
