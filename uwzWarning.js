@@ -24,6 +24,6 @@
 			if (level > level_max) level_max = level;
 		}
 	}
-	result = type_max + ':' + level_max;
+	result = type_max + '-' + level_max;
 	return result;
 }(input));
