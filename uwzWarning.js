@@ -3,7 +3,7 @@
 // and https://docs.oracle.com/javase/7/docs/technotes/guides/scripting/programmer_guide/
 
 // openhab binding looks like this:
-// Number uwz      "Warnstufe [%.0f]" (Weather) { http="<[http://www.unwetterzentrale.de/uwz/getwarning_de.php?plz=69429&uwz=UWZ-DE&lang=de:80:JS(uwzWarning.js)]" }
+// String uwz      "Warnstufe: [MAP(uwz_de.map:%s]" (Weather) { http="<[http://www.unwetterzentrale.de/uwz/getwarning_de.php?plz=69429&uwz=UWZ-DE&lang=de:80:JS(uwzWarning.js)]" }
 
 // logic from http://knx-user-forum.de/forum/%C3%B6ffentlicher-bereich/knx-eib-forum/code-schnipsel/16534-unwetterzentrale
 (function() {
@@ -24,7 +24,6 @@
 			if (level > level_max) level_max = level;
 		}
 	}
-	// TBD: how to return warning level?
-	result = type_max;
+	result = type_max + ':' + level_max;
 	return result;
 }(input));
